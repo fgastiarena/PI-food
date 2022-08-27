@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+}
+
+.container-form {
+    background-image: url('../images/jakub-kapusnak-sDbj1dFlFPU-unsplash.jpg');
+    background-attachment: scroll;
+    background-repeat: no-repeat, repeat-y;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 5rem;
+}
+
+.form {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 1rem;
+    background-color: #cdd2d3c4;
+    border-radius: 10px;
+    box-shadow: -1rem 0 3rem rgb(71, 125, 129);
+    transition: 0.4s ease-out;
+    border: 1px solid black;
+    padding: 1rem;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.input-detail {
+    width: 100%;
+    outline: none;
+    padding: 0.5rem;
+    border-radius: .4rem;
+    border-color: transparent;
+}
+
+.div-inputs {
+    width: 100%;
+}
+
+.diets-list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    gap: 0.5rem;
+    cursor: default;
+}
+
+.diets-list li {
+    list-style-type: none;
+    /* margin-left: 0.5rem; */
+    display: flex;
+    font-size: 15px;
+}
+
+.btn-form-delete {
+    display: inline;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    margin-right: 2px;
+    font-size: 12px;
+}
+
+textarea {
+    height: 100px;
+}
+
+.form-error {
+    margin-top: 2px;
+    color: #d33924;
+    font-size: 15px;
+    /* display: flex;
+    justify-content: center; */
+    /* text-shadow: 0.01rem 0.05rem 0 black; */
+}
+
+.final-btn {
+    background-color: #fff;
+    border: 0.3px solid black;
+    border-radius: 1.5rem;
+    box-sizing: border-box;
+    color: #0d172a;
+    cursor: pointer;
+    display: inline-block;
+    position: static;
+    font-family: "Basier circle", -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    text-decoration-thickness: auto;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+    user-select: none;
+    touch-action: manipulation;
+    margin-bottom: 6px;
+    margin-top: 3px;
+}
+
+.final-btn:hover {
+    background-color: #1e293b;
+    color: #fff;
+}
+
+.buttons {
+    display: flex;
+    gap: 0.5rem;
+}

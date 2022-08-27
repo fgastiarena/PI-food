@@ -1,0 +1,56 @@
+.header-nav {
+    position: relative;
+    top: 0%;
+    width: 100%;
+    background-color: rgba(240, 170, 112, 0.527);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.title-nav {
+    color: black;
+    font-family: 'Droid serif', serif;
+    font-size: 30px;
+    font-weight: 400 bold;
+    font-style: italic;
+    line-height: 44px;
+    text-align: center;
+}
+
+.btn-nav {
+    appearance: none;
+    background-color: #FFFFFF;
+    border-radius: 40em;
+    border-style: none;
+    box-shadow: #ADCFFF 0 -12px 6px inset;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -.24px;
+    margin: 0;
+    outline: none;
+    padding: 0.5rem 1.3rem;
+    quotes: auto;
+    text-align: center;
+    text-decoration: none;
+    transition: all .15s;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+.btn-nav:hover {
+    background-color: #f8d069;
+    box-shadow: #FF6314 0 -6px 8px inset;
+    transform: scale(1.125);
+}
+
+.btn-nav:active {
+    transform: scale(1.025);
+}

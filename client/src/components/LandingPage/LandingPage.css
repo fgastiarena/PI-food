@@ -1,0 +1,55 @@
+.container-img {
+    background-image: url('../images/background1.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    margin-top: 0%;
+}
+
+.main-title {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 39%;
+    font-size: 3rem;
+    background-color: rgba(0, 0, 0, 0.224);
+    padding: 0.5rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    backdrop-filter: blur(2px);
+    text-shadow: 0.05rem 0.1rem 0 black;
+    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem black;
+    margin: 0% 36% 0% 36%;
+}
+
+.title {
+    font-size: 70%;
+    color: rgb(231, 124, 124);
+    margin: 8px;
+    text-align: center;
+}
+
+.landing-btn {
+    background-color: #fadde9;
+    border-radius: 100px;
+    box-shadow: rgba(194, 44, 102, 0.2) 0 -25px 18px -14px inset, rgba(194, 44, 102, .15) 0 1px 2px, rgba(194, 44, 102, .15) 0 2px 4px, rgba(194, 44, 102, .15) 0 4px 8px, rgba(194, 44, 102, .15) 0 8px 16px, rgba(194, 44, 102, .15) 0 16px 32px;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+.landing-btn:hover {
+    box-shadow: rgba(194, 44, 102, .35) 0 -25px 18px -14px inset, rgba(194, 44, 102, .25) 0 1px 2px, rgba(194, 44, 102, .25) 0 2px 4px, rgba(194, 44, 102, .25) 0 4px 8px, rgba(194, 44, 102, .25) 0 8px 16px, rgba(194, 44, 102, .25) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
+}

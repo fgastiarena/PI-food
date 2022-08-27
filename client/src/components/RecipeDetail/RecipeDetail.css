@@ -1,0 +1,119 @@
+.container-detail {
+    background-image: url('../images/jakub-kapusnak-sDbj1dFlFPU-unsplash.jpg');
+    background-attachment: scroll;
+    background-repeat: no-repeat, repeat-y;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.cardDetail {
+    align-content: center;
+    text-align: justify;
+    background-color: #cdd2d3c4;
+    border-radius: 10px;
+    box-shadow: -1rem 0 3rem rgb(71, 125, 129);
+    transition: 0.4s ease-out;
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+.detail-img {
+    width: 350px;
+    height: 250px;
+    padding: 0;
+    display: flex;
+    margin: 0 auto;
+}
+
+.titleName {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size: 25px;
+}
+
+.middle-titles {
+    font-size: 15px;
+    display: flex;
+    margin-left: 10px;
+}
+
+.p-tags {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-detail {
+    display: flex;
+    margin: 1rem auto;
+}
+
+
+/* .btn-detail {
+    background-color: #222;
+    border-radius: 4px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Farfetch Basis", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    margin-left: 46%;
+    outline: none;
+    overflow: hidden;
+    padding: 4px 8px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    user-select: none;
+    touch-action: manipulation;
+    width: 10%;
+}
+
+.btn-detail:hover,
+.btn-detail:focus {
+    opacity: .75;
+} */
+
+.btn-detail {
+    background-color: #fff;
+    border: 0.3px solid black;
+    border-radius: 1.5rem;
+    box-sizing: border-box;
+    color: #0d172a;
+    cursor: pointer;
+    display: flex;
+    position: static;
+    font-family: "Basier circle", -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    text-decoration-thickness: auto;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+    user-select: none;
+    touch-action: manipulation;
+    margin: 0.5rem auto;
+    overflow: hidden;
+    outline: none;
+    position: relative;
+}
+
+.btn-detail:hover {
+    background-color: #1e293b;
+    color: #fff;
+}

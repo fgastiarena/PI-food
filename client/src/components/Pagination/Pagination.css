@@ -1,0 +1,39 @@
+.pagination-container {
+    list-style-type: none;
+    cursor: pointer;
+    background-color: hsla(0, 11%, 85%, 0.596);
+    align-content: center;
+    overflow: hidden;
+    /* margin-left: 25%;
+    margin-top: 20px; */
+    margin: 0 auto;
+    /* display: inline-block; */
+    display: flex;
+    width: fit-content;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+.list-items-pag {
+    display: block;
+    text-align: center;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 7px 16px;
+}
+
+.list-items-pag:hover {
+    background-color: hsla(59, 55%, 81%, 0.836);
+    border-radius: 5px;
+}
+
+.ulPag {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0 0.5rem;
+    /* padding-left: 104px;
+    padding-right: 100px; */
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+}
