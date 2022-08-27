@@ -22,10 +22,6 @@ export default function RecipeDetail() {
     navigate('/home');
   }
 
-  // useEffect(() => {
-  //   console.log('isLoading -> ', isLoading);
-  // }, [isLoading]);
-  console.log(detail.healthScore);
   return(
     <div className='container-detail'>
 
@@ -33,7 +29,7 @@ export default function RecipeDetail() {
         {isLoading ? (
           <LoadingPage/>
         ) : (
-          <fragment>
+          <>
             <img className='detail-img' src={detail.image} alt='notFound'/>
             <h1 className='titleName'>{detail.title}</h1>
             <h3 className='middle-titles'>SUMMARY</h3>
@@ -43,8 +39,8 @@ export default function RecipeDetail() {
             <h3 className='middle-titles'>INSTRUCTIONS</h3>
             <p className='p-tags'>{detail.steps}</p>
             <h3 className='middle-titles'>DIETS</h3>
-            <p className='p-tags'> {detail.diets?.map(diet => <li>{diet}</li>)}</p>
-          </fragment>
+            <p className='p-tags'> {detail.diets?.map(diet => <li key={diet}>{diet}</li>)}</p>
+          </>
         )}
 
       </div>

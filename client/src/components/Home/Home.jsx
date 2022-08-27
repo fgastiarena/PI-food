@@ -82,7 +82,8 @@ export default function Home() {
               }
           </div>
 
-        {/* {allRecipes.length === 0 && <div><img src={notFound} alt='not found'/></div>} */}
+          {/* {allRecipes.length === 0 && <div><p>No hay coincidencias con el término ingresado</p>
+        <img src={notFound} alt='not found'/></div>} */}
 
               <button className="up-btn" onClick={e => chargeRecipes(e)}>All Recipes</button>
           <div className="filters-container">
@@ -105,6 +106,7 @@ export default function Home() {
                         return ( <option value={d.name} key={d.id}> {d.name} </option> )
                     })}
                 </select>
+
           </div>
 
           <div>

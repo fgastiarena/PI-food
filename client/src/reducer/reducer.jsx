@@ -5,7 +5,7 @@ let initialState = {
     recipesState: [], //copia del state para los filtros
     diets: [],
     detail: [], //detalle de c/u por id
-    isLoading: false
+    isLoading: false,
 };
 
 export default function rootReducer(state = initialState, action) {
@@ -14,7 +14,7 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 allRecipesState: action.payload,
-                recipesState: action.payload
+                recipesState: action.payload,
             };
         case 'GET_ALL_DIETS':
             return{
@@ -24,7 +24,7 @@ export default function rootReducer(state = initialState, action) {
         case 'GET_RECIPES_BY_NAME':
             return{
                 ...state,
-                allRecipesState: action.payload
+                allRecipesState: action.payload,
             };
         case 'GET_RECIPES_BY_ID':
             return{

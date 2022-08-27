@@ -2,7 +2,7 @@ const { Router } = require('express');
 const router = Router();
 const axios = require('axios');
 const { Recipe, Diet } = require('../db.js');
-const { getAllRecipes, searchById, getDietNamesFromRecipe } = require('../controllers/recipesCont.js');
+const { getAllRecipes, searchById } = require('../controllers/recipesCont.js');
 
 router.get('/', async(req, res) => {
     const { name } = req.query;

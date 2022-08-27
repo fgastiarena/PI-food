@@ -62,12 +62,7 @@ export default function FormRecipe() {
       ...input,
       [e.target.name] : e.target.value
     })
-    // setErrors(
-    //   validationForm({
-    //     ...input,
-    //     [e.target.name]: e.target.value,
-    //   })
-    // );
+
   };
 
   function handleSelect(e){
@@ -76,13 +71,6 @@ export default function FormRecipe() {
         ...input,
         diets: [...input.diets, e.target.value]
       })
-    //   setErrors(
-    //     validationForm({
-    //       ...input,
-    //       diets: [...input.diets, e.target.value]
-    //     })
-    //   )
-    // }
     }
   };
   
