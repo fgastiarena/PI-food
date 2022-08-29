@@ -21,6 +21,12 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 diets: action.payload
             };
+        case 'GET_ALL_RECIPES_AND_DIETS':
+            return{
+                ...state,
+                allRecipesState: action.payload.allRecipes,
+                diets: action.payload.allDiets
+            }
         case 'GET_RECIPES_BY_NAME':
             return{
                 ...state,
@@ -33,8 +39,8 @@ export default function rootReducer(state = initialState, action) {
             }
         case 'ORDER_BY_ALPHA':
             const alphabetic = action.payload === 'Asc' ? 
-                            state.recipesState.sort((a, b) => a.title.localeCompare(b.title)) :
-                            state.recipesState.sort((a, b) => b.title.localeCompare(a.title)) ;
+                            state.allRecipesState.sort((a, b) => a.title.localeCompare(b.title)) :
+                            state.allRecipesState.sort((a, b) => b.title.localeCompare(a.title)) ;
             return{
                 ...state,
                 allRecipesState: alphabetic
@@ -48,8 +54,8 @@ export default function rootReducer(state = initialState, action) {
             };
         case 'ORDER_BY_SCORE':
             const score = action.payload === 'highScore' ?
-                            state.recipesState.sort((a,b) => b.healthScore - a.healthScore) :
-                            state.recipesState.sort((a,b) => a.healthScore - b.healthScore) ;
+                            state.allRecipesState.sort((a,b) => b.healthScore - a.healthScore) :
+                            state.allRecipesState.sort((a,b) => a.healthScore - b.healthScore) ;
             return {
                 ...state,
                 allRecipesState: score

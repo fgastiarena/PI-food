@@ -16,8 +16,8 @@ export default function SearchBar({setCurrentPage}) {
     function handleSubmit(e){
         e.preventDefault();
         setCurrentPage(1);
-            dispatch(getRecipesByName(name));
-            setName(''); 
+        dispatch(getRecipesByName(name));
+        setName(''); 
     };
 
     function handleEnter(e){

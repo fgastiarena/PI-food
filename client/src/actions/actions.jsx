@@ -45,6 +45,33 @@ export function getAllDiets(){
     }
 };
 
+export function getAllRecipesAndDiets(){
+    return async function(dispatch){
+        try {
+            dispatch({
+                type:'SET_LOADING',
+                payload:{isLoading: true}
+            });
+            let allRecipes = await axios.get('http://localhost:3001/recipes');
+            let allDiets =  await axios.get('http://localhost:3001/diets');
+
+            dispatch({
+                type: 'GET_ALL_RECIPES_AND_DIETS',
+                payload: {
+                    allRecipes: allRecipes.data, 
+                    allDiets: allDiets.data
+                }
+            });
+            return dispatch({
+                type:'SET_LOADING',
+                payload:{isLoading: false}
+            });
+        } catch (error) {
+            console.error('Error en getAllRecipesAndDiets --> ', error);
+        }
+    }
+}
+
 export function getRecipesByName(name){
     return async function(dispatch){
         try {

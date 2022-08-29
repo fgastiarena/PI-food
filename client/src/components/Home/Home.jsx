@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllDiets, getAllrecipes, orderByAlpha, orderByHealthScore, orderRecipesByDiet } from "../../actions/actions.jsx";
+import { getAllDiets, getAllrecipes, getAllRecipesAndDiets, orderByAlpha, orderByHealthScore, orderRecipesByDiet } from "../../actions/actions.jsx";
 import LoadingPage from "../LoadingPage/LoadingPage.jsx";
 import NavBar from "../NavBar/NavBar.jsx";
 import Pagination from "../Pagination/Pagination.jsx";
 import RecipeCard from "../RecipeCard/RecipeCard.jsx";
 import './Home.css';
-import notFound from '../images/notFound.gif';
+import notFound4 from '../images/notFound4.gif';
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -14,13 +14,11 @@ export default function Home() {
   const allDiets = useSelector(state => state.diets);
   const isLoading = useSelector(state => state.isLoading);
 
-  useEffect(() => {
-    dispatch(getAllrecipes());
-  }, [dispatch]);
 
-  useEffect(() => {
-      dispatch(getAllDiets());
-  },[dispatch]);
+  useEffect(() =>{
+      dispatch(getAllRecipesAndDiets());
+  }, [dispatch])
+
 
   function chargeRecipes(e){
     let selectList = document.querySelectorAll('.default-select');
@@ -54,12 +52,13 @@ export default function Home() {
       dispatch(orderByAlpha(e.target.value));
       setCurrentPage(1);
       setOrder(e.target.value) //cuando seteo la pag ↑, modifico el estado local y renderizo
-  };
+    };
 
   function handleDiets(e){
       e.preventDefault();
       dispatch(orderRecipesByDiet(e.target.value));
       setCurrentPage(1);
+
   };
 
   function handleScore(e){
@@ -81,10 +80,6 @@ export default function Home() {
                   )
               }
           </div>
-
-          {/* {allRecipes.length === 0 && <div><p>No hay coincidencias con el término ingresado</p>
-        <img src={notFound} alt='not found'/></div>} */}
-
               <button className="up-btn" onClick={e => chargeRecipes(e)}>All Recipes</button>
           <div className="filters-container">
 
@@ -93,8 +88,8 @@ export default function Home() {
                   <option value="Asc">A-Z</option>
                   <option value="Desc">Z-A</option>
                 </select>
-
-                <select className="default-select" defaultValue={"DEFAULT"} onChange={e => {handleScore(e)}}>
+              
+                <select className="default-select" defaultValue={"DEFAULT"} onChange={e => {handleScore(e);}}>
                     <option value="DEFAULT">Health Score</option>
                     <option value='highScore'>Healthier</option>
                     <option value='lowScore'>Less Healthy</option>
@@ -106,9 +101,11 @@ export default function Home() {
                         return ( <option value={d.name} key={d.id}> {d.name} </option> )
                     })}
                 </select>
-
           </div>
 
+          {(allRecipes.length === 0) && (<div><p>Recipe not Found!</p>
+                <img src={notFound4} alt='not found'/></div>)}
+            
           <div>
               <Pagination recipesPerPage={recipesPerPage} allRecipes={allRecipes.length} pagination={pagination}/>
           </div>
