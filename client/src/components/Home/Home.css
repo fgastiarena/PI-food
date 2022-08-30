@@ -73,33 +73,25 @@ body {
     color: #fff;
 }
 
-
-/* .up-btn {
-    background-color: #222;
-    border-radius: 4px;
-    border-style: none;
-    box-sizing: border-box;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-family: "Farfetch Basis", "Helvetica Neue", Arial, sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    line-height: 1.5;
-    margin-bottom: 2rem;
-    margin-left: 46%;
-    outline: none;
-    overflow: hidden;
-    padding: 5px 10px;
-    position: relative;
+.not-found-message-container {
+    display: grid;
+    font-size: 35px;
+    letter-spacing: -1px;
+    color: #9e200f;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 #000;
+    margin: 10px 0 24px;
     text-align: center;
-    text-transform: none;
-    user-select: none;
-    touch-action: manipulation;
-    width: 8%;
+    line-height: 50px;
 }
 
-.up-btn:hover,
-.up-btn:focus {
-    opacity: .75;
-} */
+.not-found-message {
+    background-color: rgba(255, 255, 255, 0.514);
+}
+
+.img-notFound {
+    /* margin-left: 34%; */
+    margin: 0 auto;
+    height: 400px;
+    width: 450px;
+}

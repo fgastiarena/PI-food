@@ -103,8 +103,8 @@ export default function Home() {
                 </select>
           </div>
 
-          {(allRecipes.length === 0) && (<div><p>Recipe not Found!</p>
-                <img src={notFound4} alt='not found'/></div>)}
+          {(allRecipes.length === 0) && (<div className="not-found-message-container"><p className="not-found-message">Recipe not Found!</p>
+                <img className="img-notFound"src={notFound4} alt='not found'/></div>)}
             
           <div>
               <Pagination recipesPerPage={recipesPerPage} allRecipes={allRecipes.length} pagination={pagination}/>
@@ -121,7 +121,7 @@ export default function Home() {
           </div>
 
           <div>
-              <a href="#">
+              <a style={{'textDecoration': 'none'}} href="#">
                   <button className="up-btn">Go Up ↑</button>
               </a>
           </div>

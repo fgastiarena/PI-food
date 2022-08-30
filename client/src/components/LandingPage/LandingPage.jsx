@@ -13,7 +13,7 @@ export default function LandingPage() {
   return (
     <div className='container-img'>
       <fragment className='main-title'>
-        <h1 className='title'> Foods App </h1>
+        <h1 className='title'> FOODS APP </h1>
         <button className='landing-btn' onClick={e => handleClick(e)}>Home</button>
       </fragment>
     </div>
