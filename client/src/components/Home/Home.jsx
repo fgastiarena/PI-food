@@ -97,8 +97,8 @@ export default function Home() {
 
                 <select className="default-select" defaultValue={"DEFAULT"} onChange={e => {handleDiets(e)}}>
                     <option value="DEFAULT">Select Diets</option>
-                    {allDiets?.map(d => {
-                        return ( <option value={d.name} key={d.id}> {d.name} </option> )
+                    {allDiets?.map(diet => {
+                        return (diet.name ? <option value={diet.name} key={diet.id}> {diet.name} </option> : <option value={diet} key={diet}>{diet}</option>)
                     })}
                 </select>
           </div>

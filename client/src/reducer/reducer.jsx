@@ -49,7 +49,9 @@ export default function rootReducer(state = initialState, action) {
             };
         case 'ORDER_BY_DIET':
             const dietsState = state.recipesState;
-            const dietFilter = action.payload === 'All' ? dietsState : dietsState.filter(recipe => recipe.diets.includes(action.payload));
+            const dietFilter = action.payload === 'All' ? dietsState : dietsState.filter(recipe => {
+                return (recipe.diets.includes(action.payload)) || (recipe.diets.some( diet => diet.name === action.payload))
+            });
             return{
                 ...state,
                 allRecipesState: dietFilter
