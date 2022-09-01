@@ -69,7 +69,7 @@ export default function FormRecipe() {
     if(!input.diets.includes(e.target.value)){
       setInput({
         ...input,
-        diets: [...input.diets, e.target.value]
+        diets:[...input.diets, e.target.value]
       })
     }
   };
@@ -85,7 +85,6 @@ export default function FormRecipe() {
   function handleSubmit(e){
     e.preventDefault();
     setErrors(validationForm(input));
-    // if (Object.values(errors).length !== 0) return;
     const errors = validationForm(input);
     if(!input.image){
       input.image = 'https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466_960_720.jpg';

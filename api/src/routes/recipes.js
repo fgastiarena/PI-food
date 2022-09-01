@@ -11,7 +11,7 @@ router.get('/', async(req, res) => {
         let totalRecipes = await getAllRecipes();
         if (name) {
             let recipes = totalRecipes.filter(r => r.title?.toLowerCase().includes(name.toLowerCase()));
-            
+
             res.status(200).send(recipes);
         } else {
             res.status(200).send(totalRecipes);
@@ -37,12 +37,11 @@ router.get('/:id', async(req, res) => {
         res.status(500).json({ msg: 'Error en routes/recipes/{id} --> ', error });
     }
 
-})
+});
+
 
 router.post('/create', async(req, res) => {
     const { title, summary, healthScore, steps, image, diets } = req.body;
-
-    // if(!title || !summary) res.status(404).send('Missing data!');
 
     try {
         const recipeCreated = await Recipe.create({

@@ -6,9 +6,6 @@ export default function LoadingPage() {
   return (
       <div className="loading-container">
         <img className="loading-img" src={loading4} alt="Loading ..." />
-        <div>
-          <p>Loading ... just a second please </p>
-        </div>
       </div>
   );
 }

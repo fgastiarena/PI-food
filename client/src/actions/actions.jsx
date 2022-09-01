@@ -118,6 +118,7 @@ export function getRecipesById(id){
     }
 };
 
+
 export function postRecipe(payload){
     return async function(){
         try {
@@ -130,11 +131,14 @@ export function postRecipe(payload){
 }
 
 
+
+
+
 //FILTROS
 
 export function orderRecipesByDiet(payload){
     return {
-        type: 'ORDER_BY_DIET',
+        type: 'FILTER_BY_DIET',
         payload
     }
 };
@@ -152,3 +156,4 @@ export function orderByHealthScore(payload){
         payload
     }
 };
+

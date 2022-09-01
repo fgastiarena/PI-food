@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './RecipeCard.css';
 
 export default function RecipeCard({id, image, title, healthScore, diets}) {
+
   return (
     <div>
         <Link to={`/recipes/${id}`} className='card-link'>

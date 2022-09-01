@@ -2,9 +2,9 @@ import React from 'react';
 
 let initialState = {
     allRecipesState: [],
-    recipesState: [], //copia del state para los filtros
+    recipesState: [],
     diets: [],
-    detail: [], //detalle de c/u por id
+    detail: [],
     isLoading: false,
 };
 
@@ -39,28 +39,37 @@ export default function rootReducer(state = initialState, action) {
                 detail: action.payload
             }
         case 'ORDER_BY_ALPHA':
+            // const newObject = {...state.recipesState};
+            // console.log('1', newObject);
             const alphaState = state.recipesState;
             const alphabetic = action.payload === 'Asc' ? 
                             alphaState.sort((a, b) => a.title.localeCompare(b.title)) :
                             alphaState.sort((a, b) => b.title.localeCompare(a.title)) ;
+            // console.log('2', state.recipesState);
             return{
                 ...state,
                 allRecipesState: alphabetic
             };
-        case 'ORDER_BY_DIET':
-            const dietsState = state.recipesState;
-            const dietFilter = action.payload === 'All' ? dietsState : dietsState.filter(recipe => {
+        case 'FILTER_BY_DIET':
+            // const newObject2 = {...state.recipesState};
+            // console.log('1', newObject2);
+            // const dietsState = state.recipesState;
+            state.recipesState = action.payload === 'All' ? state.recipesState : state.recipesState.filter(recipe => {
                 return (recipe.diets.includes(action.payload)) || (recipe.diets.some( diet => diet.name === action.payload))
             });
+            // console.log('2', state.recipesState);
             return{
                 ...state,
-                allRecipesState: dietFilter
+                allRecipesState: state.recipesState
             };
         case 'ORDER_BY_SCORE':
+            // const newObject3 = {...state.recipesState};
+            // console.log('1', newObject3);
             const scoreState = state.recipesState;
             const score = action.payload === 'highScore' ?
                             scoreState.sort((a,b) => b.healthScore - a.healthScore) :
                             scoreState.sort((a,b) => a.healthScore - b.healthScore) ;
+            // console.log('2', state.recipesState);
             return {
                 ...state,
                 allRecipesState: score
@@ -70,6 +79,7 @@ export default function rootReducer(state = initialState, action) {
                   ...state,
                   isLoading: action.payload.isLoading
                 };
+
 
         default:
             return state;

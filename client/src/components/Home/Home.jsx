@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllDiets, getAllrecipes, getAllRecipesAndDiets, orderByAlpha, orderByHealthScore, orderRecipesByDiet } from "../../actions/actions.jsx";
+import { getAllrecipes, getAllRecipesAndDiets, orderByAlpha, orderByHealthScore, orderRecipesByDiet } from "../../actions/actions.jsx";
 import LoadingPage from "../LoadingPage/LoadingPage.jsx";
 import NavBar from "../NavBar/NavBar.jsx";
 import Pagination from "../Pagination/Pagination.jsx";
@@ -16,7 +16,7 @@ export default function Home() {
 
 
   useEffect(() =>{
-      dispatch(getAllRecipesAndDiets());
+          dispatch(getAllRecipesAndDiets());
   }, [dispatch])
 
 
@@ -58,7 +58,7 @@ export default function Home() {
       e.preventDefault();
       dispatch(orderRecipesByDiet(e.target.value));
       setCurrentPage(1);
-
+      setOrder(e.target.value)
   };
 
   function handleScore(e){
@@ -71,16 +71,14 @@ export default function Home() {
 
   return(
       <div className="container-home">
-          <div>
               {
                   isLoading ? (
                       <LoadingPage/>
                   ) : (
+                      <>
                       <NavBar setCurrentPage={setCurrentPage}/>
-                  )
-              }
-          </div>
-              <button className="up-btn" onClick={e => chargeRecipes(e)}>All Recipes</button>
+                      
+                      <button className="up-btn" onClick={e => chargeRecipes(e)}>All Recipes</button>
           <div className="filters-container">
 
               <select className="default-select" defaultValue={"DEFAULT"} onChange={e => {handleAlpha(e)}}>
@@ -101,6 +99,7 @@ export default function Home() {
                         return (diet.name ? <option value={diet.name} key={diet.id}> {diet.name} </option> : <option value={diet} key={diet}>{diet}</option>)
                     })}
                 </select>
+
           </div>
 
           {(allRecipes.length === 0) && (<div className="not-found-message-container"><p className="not-found-message">Recipe not Found!</p>
@@ -125,6 +124,10 @@ export default function Home() {
                   <button className="up-btn">Go Up ↑</button>
               </a>
           </div>
+                      </>
+                  )
+              }
+              
       </div>
   )
  
